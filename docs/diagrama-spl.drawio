@@ -1,0 +1,99 @@
+<mxfile host="Electron" modified="2026-07-08T00:00:00.000Z" agent="Mozilla/5.0" version="21.3.5">
+  <diagram id="1" name="SPL Feature Model">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- TITLE -->
+        <mxCell id="title" value="DIAGRAMA SPL - LÍNEA DE PRODUCTOS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="10" width="600" height="30" as="geometry"/>
+        </mxCell>
+
+        <!-- ROOT -->
+        <mxCell id="root" value="Sistema de Gestión de Tareas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="400" y="60" width="200" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- MANDATORY arc -->
+        <mxCell id="mand_arc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="root" target="mandatory_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="mand_label" value="Obligatorio" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="60" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- OPTIONAL arc -->
+        <mxCell id="opt_arc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="root" target="optional_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="opt_label" value="Opcional" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="570" y="90" width="60" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- MANDATORY GROUP BOX -->
+        <mxCell id="mandatory_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="380" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="mandatory_title" value="Características Obligatorias (Core)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="125" width="240" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- FEATURES MANDATORY -->
+        <mxCell id="f_tasks" value="tasks/ (CRUD Tareas)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="150" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_auth" value="accounts/ (Autenticación)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_admin" value="Admin Django" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="310" y="200" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_templates" value="Templates Base" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="310" y="150" width="150" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- OPTIONAL GROUP BOX -->
+        <mxCell id="optional_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="120" width="380" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="optional_title" value="Características Opcionales" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="125" width="200" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- FEATURES OPTIONAL -->
+        <mxCell id="f_reportes" value="reportes/ (Exportar CSV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="540" y="150" width="170" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="f_notif" value="Notificaciones (Futuro)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="540" y="200" width="170" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- OR arc for optional features -->
+        <mxCell id="or_arc" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="optional_box" target="variants_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- VARIANTS -->
+        <mxCell id="variants_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="250" y="320" width="500" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="variants_title" value="VARIANTES DEL PRODUCTO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="325" width="240" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="v_a" value="VARIANTE A (Básica)&#10;ENABLE_REPORTES = False&#10;ENABLE_NOTIFICATIONS = False" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="270" y="355" width="210" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="v_b" value="VARIANTE B (Completa)&#10;ENABLE_REPORTES = True&#10;ENABLE_NOTIFICATIONS = True" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="510" y="355" width="220" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="legend" value="Leyenda: Azul = Obligatorio | Amarillo = Opcional | Rojo = Variante A | Verde = Variante B" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontColor=#666;" vertex="1" parent="1">
+          <mxGeometry x="200" y="470" width="600" height="20" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

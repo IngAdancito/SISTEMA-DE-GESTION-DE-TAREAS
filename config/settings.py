@@ -1,11 +1,19 @@
 from pathlib import Path
 from decouple import config
+from config.config_product import PRODUCT_A, PRODUCT_B
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
+
+PRODUCT_VARIANT = config('PRODUCT_VARIANT', default='A')
+
+if PRODUCT_VARIANT == 'B':
+    PRODUCT_CONFIG = PRODUCT_B
+else:
+    PRODUCT_CONFIG = PRODUCT_A
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -18,7 +26,7 @@ INSTALLED_APPS = [
     'accounts',
 ]
 
-ENABLE_REPORTES = config('ENABLE_REPORTES', default=False, cast=bool)
+ENABLE_REPORTES = PRODUCT_CONFIG['ENABLE_REPORTES']
 if ENABLE_REPORTES:
     INSTALLED_APPS += ['reportes']
 

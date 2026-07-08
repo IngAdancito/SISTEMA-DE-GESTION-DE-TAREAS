@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ task.title }}{% endblock %}
+{% block content %}
+<div class="card">
+    <h2>{{ task.title }}</h2>
+    <p><strong>Descripci&oacute;n:</strong> {{ task.description|default:"Sin descripci&oacute;n" }}</p>
+    <p><strong>Estado:</strong> {{ task.get_status_display }}</p>
+    <p><strong>Prioridad:</strong> {{ task.get_priority_display }}</p>
+    <p><strong>Fecha l&iacute;mite:</strong> {{ task.due_date|default:"Sin fecha" }}</p>
+    <p><strong>Asignado a:</strong> {{ task.assigned_to|default:"Sin asignar" }}</p>
+    <p><strong>Creada:</strong> {{ task.created_at|date:"d/m/Y H:i" }}</p>
+    <div class="actions" style="margin-top:1rem;">
+        <a href="{% url 'task_update' task.pk %}" class="btn btn-warning">Editar</a>
+        <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'task_list' %}" class="btn btn-primary">Volver</a>
+    </div>
+</div>
+{% endblock %}

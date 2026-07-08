@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Iniciar Sesi&oacute;n{% endblock %}
+{% block content %}
+<div class="card" style="max-width:400px; margin:0 auto;">
+    <h2>Iniciar Sesi&oacute;n</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+    <p style="margin-top:1rem;">¿No tienes cuenta? <a href="{% url 'register' %}">Reg&iacute;strate</a></p>
+</div>
+{% endblock %}

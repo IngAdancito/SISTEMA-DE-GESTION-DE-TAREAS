@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sistema de Gesti&oacute;n de Tareas{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <nav>
+        <h1><a href="/">Sistema de Gesti&oacute;n de Tareas</a></h1>
+        <div class="nav-links">
+            {% if user.is_authenticated %}
+                <span style="color:#ecf0f1;">{{ user.username }}</span>
+                <a href="{% url 'task_create' %}">Nueva Tarea</a>
+                {% if ENABLE_REPORTES %}
+                    <a href="{% url 'export_tasks' %}">Exportar CSV</a>
+                {% endif %}
+                <a href="{% url 'logout' %}">Cerrar Sesi&oacute;n</a>
+            {% else %}
+                <a href="{% url 'login' %}">Iniciar Sesi&oacute;n</a>
+                <a href="{% url 'register' %}">Registrarse</a>
+            {% endif %}
+        </div>
+    </nav>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+    <footer>&copy; 2026 - Sistema de Gesti&oacute;n de Tareas</footer>
+</body>
+</html>
